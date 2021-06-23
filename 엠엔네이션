@@ -1,0 +1,14 @@
+import discord
+from discord.ext import commands
+bot = commands.Bot(command_prefix='&')
+TOKEN = 
+
+@bot.command()
+async def 주사위(ctx):
+    import random
+    dice = random.randint(1, 6)
+    embed = discord.Embed(title=str(dice),
+                          description='주사위를 굴려 %d가 나왔습니다!' %(dice))
+    await ctx.channel.send(embed=embed)
+
+bot.run(TOKEN)
