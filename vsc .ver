@@ -6,9 +6,14 @@ client =discord.Client()
 token =
 @client.event
 async def on_message(message):
-    if message.content == '주사위':
+    if message.content.startswith ('주사위'):
+        notice = message.content [3:]
         import random
         dice = random.randint(1, 6)
-        embed = discord.Embed(title='{}' .format(dice), description='주사위를 굴려 {}가 나왔습니다!' .format(dice))
+        if dice == notice
+        embed = discord.Embed(title='결과는?', description='당신이 말한 숫자: {} \n 나온 숫자: {} \n  맞았습니다!' .format(notice, dice))
+        await message.channel.send (embed=embed)
+        if dice != notice
+        embed = discord,Embed(title='결과는?', description='당신이 말한 숫자: {} \n 나온 숫자: {} \n 틀렸습니다! 다시 도전해 보세요' .format(notice, dice)
         await message.channel.send (embed=embed)
 
